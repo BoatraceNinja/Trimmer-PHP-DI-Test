@@ -18,6 +18,7 @@ jobs:
         php-version:
           - '8.2'
           - '8.3'
+          - '8.4'
     steps:
     - name: Setup PHP ${{ matrix.php-version }}
       uses: shivammathur/setup-php@v2
@@ -30,8 +31,6 @@ jobs:
 
     - name: Install Dependencies
       run: composer install --prefer-dist --no-interaction --no-progress
-
-    - run: composer require friendsofphp/proxy-manager-lts:^1.0
 
     - name: Run PHPUnit Tests
       run: vendor/bin/phpunit
