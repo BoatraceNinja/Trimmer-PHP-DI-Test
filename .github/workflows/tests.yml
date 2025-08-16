@@ -31,5 +31,7 @@ jobs:
     - name: Install Dependencies
       run: composer install --prefer-dist --no-interaction --no-progress
 
+    - run: composer require friendsofphp/proxy-manager-lts:^1.0
+
     - name: Run PHPUnit Tests
       run: vendor/bin/phpunit
